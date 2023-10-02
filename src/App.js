@@ -1,5 +1,5 @@
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
-import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"; // Load worker code separately with worker-loader
+import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"; /* eslint import/no-webpack-loader-syntax: off */
 
 mapboxgl.workerClass = MapboxWorker; // Wire up loaded worker to be used instead of the default /* eslint import/no-webpack-loader-syntax: off */
 //import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
