@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import SearchComponent from "./SearchComponent/SearchComponent";
 import axios, { CanceledError } from "axios";
 import Weather from "./Weather/Weather";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass =
+  require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 function App() {
   const mapRef = useRef();
