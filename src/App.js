@@ -1,13 +1,19 @@
-import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
-import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"; /* eslint import/no-webpack-loader-syntax: off */
-
-mapboxgl.workerClass = MapboxWorker; // Wire up loaded worker to be used instead of the default /* eslint import/no-webpack-loader-syntax: off */
-//import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
-//mapboxgl.workerClass = MapboxWorker;
 import { useEffect, useRef, useState } from "react";
 import SearchComponent from "./SearchComponent/SearchComponent";
 import axios, { CanceledError } from "axios";
 import Weather from "./Weather/Weather";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import mapboxworker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
+mapboxgl.workerClass = mapboxworker;
+
+// The following is required to stop "npm build" from transpiling mapbox code.
+// notice the exclamation point in the import.
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+
 // eslint-disable-next-line import/no-webpack-loader-syntax
 
 function App() {

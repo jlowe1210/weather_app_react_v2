@@ -2,7 +2,6 @@ import React, { useMemo } from "react";
 import "./Weather.css";
 
 function Weather(props) {
-  console.log(props);
   const fahrenheit = useMemo(
     () => ((props.weatherData.temp - 273.15) * 9) / 5 + 32,
     [props.weatherData]
