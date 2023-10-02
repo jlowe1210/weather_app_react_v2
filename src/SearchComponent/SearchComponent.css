@@ -1,0 +1,29 @@
+.Search_input {
+  outline: none;
+  padding: 6px 5px;
+  width: 350px;
+  font-size: 15px;
+  /* border-radius: 3px; */
+  font-weight: lighter;
+
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid black;
+  /* border-left: none; */
+  border-right: none;
+}
+
+.Search_button {
+  border-radius: 0 4pt 4pt 0 !important;
+  padding: 6px 5px;
+  outline: none;
+  border: 1px solid;
+  border-left: none;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
