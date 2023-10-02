@@ -1,11 +1,14 @@
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
+import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"; // Load worker code separately with worker-loader
+
+mapboxgl.workerClass = MapboxWorker; // Wire up loaded worker to be used instead of the default /* eslint import/no-webpack-loader-syntax: off */
+//import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
+//mapboxgl.workerClass = MapboxWorker;
 import { useEffect, useRef, useState } from "react";
 import SearchComponent from "./SearchComponent/SearchComponent";
 import axios, { CanceledError } from "axios";
 import Weather from "./Weather/Weather";
 // eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass =
-  require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 function App() {
   const mapRef = useRef();
